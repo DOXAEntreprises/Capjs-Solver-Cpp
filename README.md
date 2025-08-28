@@ -15,7 +15,7 @@ A high-performance C++ implementation of the Cap.js solver.
 ```bash
 git clone https://github.com/LxHTT/Capjs-Solver-Cpp.git
 
-cd build
+mkdir build && cd build
 
 cmake ..
 
